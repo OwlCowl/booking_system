@@ -1,0 +1,18 @@
+ <form method="POST">
+
+    {% csrf_token %}
+     {% for item in room_details_by_user %}
+         <ul>
+            <li>Conference room name: <a href="/room/{id}/"></a> {{ item.room }} </li>
+            <li>Conference room capacity: {{ item.capacity }} </li>
+            <li>Conference room availability: </li>
+            <li>Projector availability: {{ item.projector }} </li>
+         </ul>
+     {% endfor %}
+    <div>
+        <input type="submit" value = "Edit"><a href="/room/modify/{id}/"></a>
+        <input type="button" value="Delete"><a href="/room/delete/{id}"></a>
+        <input type="button" value = "Book"><a href="/room/reserve/{id}"></a>
+    </div>
+
+</form>
