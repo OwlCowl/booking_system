@@ -66,6 +66,7 @@ class ModifyRoomView(View):
         room.capacity = capacity
         room.projector = projector
         room.save()
+
         return redirect("room-list")
 
 
